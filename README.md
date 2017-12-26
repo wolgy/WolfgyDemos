@@ -4,7 +4,7 @@ Demo projects of myself.Each secondary directory is a separate project.
 
 # Menu/目录
 ## Java
-- [QueryDSLJPADemo](https://github.com/wolgy/WolfgyDemos/tree/master/QueryDSLJPADemo)
+- [QueryDSLJPADemo](https://github.com/wolgy/WolfgyDemos/tree/master/QueryDSLJPADemo)  
 **Description:** Demo project for QueryDSL for JPA.   
 **项目描述：** QueryDSL for JPA的演示项目。  
 **技术博文：** https://www.jianshu.com/p/69dcb1b85bbb
