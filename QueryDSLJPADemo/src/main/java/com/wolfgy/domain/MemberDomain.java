@@ -1,5 +1,6 @@
 package com.wolfgy.domain;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -31,6 +32,7 @@ public class MemberDomain {
 	private String name;
 	private int age;
 	private String address;
+	private Date registerDate;
 	
 	@OneToMany(cascade=CascadeType.PERSIST,mappedBy="memberDomain",fetch=FetchType.LAZY)
 	private Set<FavoriteInfoDomain> favoriteInfoDomains = new HashSet<>();
