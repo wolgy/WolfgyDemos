@@ -2,7 +2,6 @@ package com.wolfgy;
 
 import java.util.List;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +19,7 @@ import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Order;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.Projections;
+import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.JPAExpressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.wolfgy.config.AppTestConfig;
@@ -124,8 +124,12 @@ public class QueryDslJpaDemoApplicationTests {
 		//多表查询(left join)
 		List<MemberDomain> leftJoinList = queryFactory.selectFrom(qm).leftJoin(qm.favoriteInfoDomains,qf).where(qf.favoriteStoreCode.eq("0721")).fetch();
 		
-		//聚合函数
+		//聚合函数-avg()
 		Double averageAge = queryFactory.select(qm.age.avg()).from(qm).fetchOne();
+		//聚合函数-concat()
+		String concat = queryFactory.select(qm.name.concat(qm.address)).from(qm).fetchFirst();
+		//聚合函数-date_format()
+		String date = queryFactory.select(Expressions.stringTemplate("DATE_FORMAT({0},'%Y-%m-%d')", qm.registerDate)).from(qm).fetchFirst();
 		
 		//子查询
 		List<MemberDomain> subList = queryFactory.selectFrom(qm).where(qm.status.in(JPAExpressions.select(qm.status).from(qm))).fetch();
