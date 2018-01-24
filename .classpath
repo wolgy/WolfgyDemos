@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ExpandableRecyclerViewDemo/app/build/generated/source/buildConfig/androidTest/debug"/>
+	<classpathentry kind="src" path="ExpandableRecyclerViewDemo/app/build/generated/source/buildConfig/debug"/>
+	<classpathentry kind="src" path="ExpandableRecyclerViewDemo/app/build/generated/source/r/androidTest/debug"/>
+	<classpathentry kind="src" path="ExpandableRecyclerViewDemo/app/build/generated/source/r/debug"/>
+	<classpathentry kind="src" path="ExpandableRecyclerViewDemo/app/src/androidTest/java"/>
+	<classpathentry kind="src" path="ExpandableRecyclerViewDemo/app/src/main/java"/>
+	<classpathentry kind="src" path="ExpandableRecyclerViewDemo/app/src/test/java"/>
+	<classpathentry kind="src" path="QueryDslJPADemo/src/main/java"/>
+	<classpathentry kind="src" path="QueryDslJPADemo/src/test/java"/>
+	<classpathentry kind="src" path="QueryDslJPADemo/target/generated-sources/java"/>
+	<classpathentry kind="src" path="QueryDSLMongoDBDemo/src/main/java"/>
+	<classpathentry kind="src" path="QueryDSLMongoDBDemo/src/test/java"/>
+	<classpathentry kind="src" path="QueryDSLMongoDBDemo/target/generated-sources/java"/>
+	<classpathentry kind="src" path="RabbitMQDemo/src/main/java"/>
+	<classpathentry kind="src" path="RabbitMQDemo/src/test/java"/>
+	<classpathentry kind="lib" path="ExpandableRecyclerViewDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"/>
+	<classpathentry kind="lib" path="ExpandableRecyclerViewDemo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"/>
+	<classpathentry kind="lib" path="ExpandableRecyclerViewDemo/build/generated/mockable-android-26.jar"/>
+	<classpathentry kind="lib" path="ExpandableRecyclerViewDemo/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="QueryDslJPADemo/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="QueryDSLMongoDBDemo/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="RabbitMQDemo/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="ExpandableRecyclerViewDemo/app/build/intermediates/classes/debug"/>
+</classpath>
