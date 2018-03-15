@@ -16,11 +16,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.querydsl.core.BooleanBuilder;
+import com.querydsl.core.QueryResults;
 import com.querydsl.core.types.Order;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.JPAExpressions;
+import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.wolfgy.config.AppTestConfig;
 import com.wolfgy.domain.FavoriteInfoDomain;
@@ -166,4 +168,22 @@ public class QueryDslJpaDemoApplicationTests {
 		
 		
 	}
+	
+	@SuppressWarnings("unused")
+	@Test
+	public void QueryDSL分页的写法(){
+		QMemberDomain qm = QMemberDomain.memberDomain;
+		//写法一
+		JPAQuery<MemberDomain> query = queryFactory.selectFrom(qm).orderBy(qm.age.asc());
+		long total = query.fetchCount();//hfetchCount的时候上面的orderBy不会被执行
+		List<MemberDomain> list0= query.offset(2).limit(5).fetch();
+		//写法二
+		QueryResults<MemberDomain> results = queryFactory.selectFrom(qm).orderBy(qm.age.asc()).offset(2).limit(5).fetchResults();
+		List<MemberDomain> list = results.getResults();
+		logger.debug("total:"+results.getTotal());
+		logger.debug("limit:"+results.getLimit());
+		logger.debug("offset:"+results.getOffset());
+	}
+	
+
 }
