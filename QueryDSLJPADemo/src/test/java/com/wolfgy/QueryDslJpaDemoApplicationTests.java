@@ -1,5 +1,6 @@
 package com.wolfgy;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.FixMethodOrder;
@@ -183,6 +184,22 @@ public class QueryDslJpaDemoApplicationTests {
 		logger.debug("total:"+results.getTotal());
 		logger.debug("limit:"+results.getLimit());
 		logger.debug("offset:"+results.getOffset());
+	}
+	
+	@SuppressWarnings("unused")
+	@Test
+	public void template的使用(){
+		QMemberDomain qm = QMemberDomain.memberDomain;
+		//使用booleanTemplate充当where子句或where子句的一部分
+		List<MemberDomain> list = queryFactory.selectFrom(qm).where(Expressions.booleanTemplate("{} = \"tofu\"", qm.name)).fetch();
+		//上面的写法，当booleanTemplate中需要用到多个占位时
+		List<MemberDomain> list1 = queryFactory.selectFrom(qm).where(Expressions.booleanTemplate("{0} = \"tofu\" and {1} = \"Amoy\"", qm.name,qm.address)).fetch();
+		
+		//使用stringTemplate充当查询语句的某一部分
+		String date = queryFactory.select(Expressions.stringTemplate("DATE_FORMAT({0},'%Y-%m-%d')", qm.registerDate)).from(qm).fetchFirst();
+		//在where子句中使用stringTemplate
+		String id = queryFactory.select(qm.id).from(qm).where(Expressions.stringTemplate("DATE_FORMAT({0},'%Y-%m-%d')", qm.registerDate).eq("2018-03-19")).fetchFirst();
+
 	}
 	
 
