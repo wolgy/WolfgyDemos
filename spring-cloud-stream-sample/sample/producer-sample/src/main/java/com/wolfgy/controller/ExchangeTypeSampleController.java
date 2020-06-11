@@ -1,6 +1,6 @@
 package com.wolfgy.controller;
 
-import com.wolfgy.producer.ExchangeTypeTestProducer;
+import com.wolfgy.producer.ExchangeTypeTestProducerImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/exchangeType")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class ExchangeTypeTestController {
+public class ExchangeTypeSampleController {
 
-    private final ExchangeTypeTestProducer exchangeTypeTestProducer;
+    private final ExchangeTypeTestProducerImpl exchangeTypeTestProducer;
 
     @GetMapping("/headers")
     public void headers(@RequestParam String header) throws Exception {

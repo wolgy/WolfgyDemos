@@ -6,7 +6,7 @@ import org.springframework.messaging.MessageChannel;
 /**
  * @author wolfgy
  */
-public interface SampleProducer {
+public interface ExchangeTypeSampleProducer {
 
     /**
      * producer forHeader

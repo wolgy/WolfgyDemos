@@ -6,7 +6,7 @@ import org.springframework.messaging.SubscribableChannel;
 /**
  * @author wolgy
  */
-public interface SampleConsumer {
+public interface ExchangeTypeSampleConsumer {
 
     /**
      * consumer forHeader

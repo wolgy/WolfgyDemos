@@ -19,6 +19,7 @@
     <modules>
         <module>producer-sample</module>
         <module>consumer-sample</module>
+        <module>consumer-sample-second</module>
     </modules>
     <dependencyManagement>
         <dependencies>

@@ -1,7 +1,7 @@
 package com.wolfgy.producer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wolfgy.SampleProducer;
+import com.wolfgy.ExchangeTypeSampleProducer;
 import com.wolfgy.dto.SampleDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +13,12 @@ import org.springframework.messaging.support.MessageBuilder;
  * Producer samples of different exchange type
  * @author wolfgy
  */
-@EnableBinding(value = {SampleProducer.class})
+@EnableBinding(value = {ExchangeTypeSampleProducer.class})
 @Slf4j
-public class ExchangeTypeTestProducer {
+public class ExchangeTypeTestProducerImpl {
 
     @Autowired
-    private SampleProducer producer;
+    private ExchangeTypeSampleProducer producer;
 
     public void forHeaders(String header) throws Exception {
         SampleDto dto = new SampleDto();

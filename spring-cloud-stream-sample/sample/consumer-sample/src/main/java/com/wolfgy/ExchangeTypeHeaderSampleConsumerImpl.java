@@ -15,8 +15,8 @@ import java.io.IOException;
  * @author wolfgy
  */
 @Slf4j
-@EnableBinding(value = {SampleConsumer.class})
-public class ExchangeTypeHeaderTestConsumer {
+@EnableBinding(value = {ExchangeTypeSampleConsumer.class})
+public class ExchangeTypeHeaderSampleConsumerImpl {
 
     @StreamListener(value = ExchangeNames.EXCHANGE_TYPE_HEADERS)
     public void forHeaders(@Payload SampleDto dto) throws IOException {

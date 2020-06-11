@@ -1,0 +1,37 @@
+server:
+  port: 9001
+spring:
+  rabbitmq:
+    host: 192.168.10.176
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        testHeaders:
+          destination: testHeaders
+        testDirect:
+          destination: testDirect
+        testTopic:
+          destination: testTopic
+        testPartition:
+          destination: testPartition
+          producer:
+            partitionCount: 2
+            partitionKeyExpression: payload.code
+        testPartitionExtractor:
+          destination: testPartitionExtractor
+          producer:
+            partitionCount: 2
+            partitionKeyExtractorName: partitionExtractor
+            partitionSelectorName: partitionExtractor
+      rabbit:
+        bindings:
+          testHeaders:
+            producer:
+              exchangeType: headers
+          testDirect:
+            producer:
+              exchangeType: direct
+              routingKeyExpression: headers.routeTo
